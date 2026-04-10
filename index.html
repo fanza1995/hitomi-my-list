@@ -8,90 +8,101 @@
         body { background: #0f0f0f; color: #ccc; font-family: sans-serif; margin: 0; padding: 15px; }
         .wrapper { max-width: 600px; margin: auto; }
         header { border-bottom: 2px solid #444; margin-bottom: 30px; padding: 20px 0; }
-        h1 { font-size: 1.2rem; color: #fff; text-align: center; }
-        .post { background: #1a1a1a; margin-bottom: 50px; border-radius: 5px; overflow: hidden; }
+        h1 { font-size: 1.2rem; color: #fff; text-align: center; margin-bottom: 5px; }
+        .age-warning { color: #ff4757; font-size: 0.75rem; text-align: center; font-weight: bold; margin-bottom: 10px; border: 1px solid #ff4757; padding: 5px; }
+        .ad-notice { font-size: 0.7rem; text-align: center; color: #666; margin-bottom: 20px; }
+        .post { background: #1a1a1a; margin-bottom: 50px; border-radius: 5px; overflow: hidden; position: relative; }
         .post img { width: 100%; border-bottom: 1px solid #333; }
         .post-body { padding: 15px; }
-        .comment { background: #222; border-left: 4px solid #ff4757; padding: 10px; margin: 10px 0; font-size: 0.95rem; color: #eee; }
-        .link-btn { display: block; background: #ff4757; color: #fff; text-decoration: none; text-align: center; padding: 15px; border-radius: 3px; font-weight: bold; margin-top: 15px; }
-        .footer-text { text-align: center; font-size: 0.8rem; color: #666; margin-top: 50px; }
+        /* 管理人イチオシラベル */
+        .ichioshi-badge { position: absolute; top: 10px; left: 10px; background: #ff4757; color: #fff; padding: 5px 12px; font-weight: bold; font-size: 0.8rem; border-radius: 20px; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        .comment { background: #222; border-left: 4px solid #ff4757; padding: 10px; margin: 10px 0; font-size: 0.95rem; color: #eee; line-height: 1.6; }
+        .link-btn { display: block; background: #ff4757; color: #fff; text-decoration: none; text-align: center; padding: 15px; border-radius: 3px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
+        .link-btn:hover { background: #ff6b81; }
+        .footer-text { text-align: center; font-size: 0.8rem; color: #666; margin-top: 50px; border-top: 1px solid #333; padding-top: 20px; }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
     <header>
+        <div class="age-warning">【18禁】当サイトは18歳未満の方の閲覧を固く禁じます。</div>
         <h1>俺の殿堂入り同人リスト</h1>
-        <p style="font-size: 0.8rem; text-align: center;">広告とかじゃなく、マジで個人的に刺さったやつだけ。随時更新。</p>
+        <p style="font-size: 0.8rem; text-align: center; color: #888;">広告やランキングじゃなく、自腹で買って刺さった神作だけを厳選。随時更新。</p>
+        <div class="ad-notice">※本ページはプロモーションを含みます。</div>
     </header>
-    <div class="post">
-    <img src="https://doujin-assets.dmm.co.jp/digital/cg/d_738312/d_738312pr.jpg" alt="子産み島2&3〜今、お腹あいてるよ〜">
-    <div class="post-body">
-        <h2 style="font-size: 1.1rem; color: #fff;">子産み島2&3〜今、お腹あいてるよ〜</h2>
-        <div class="comment">
-            「青水庵さんらしい、圧倒的な多幸感とあまあまなハーレム設定が最高です 。シリーズ続編ですが、今作からでも十分楽しめる親切設計。妊婦・ふたなり・褐色など属性てんこ盛りなのに、全編通して『オールハッピー』で読後感が本当に素晴らしいです。3月のランキング上位も納得の、癒やしと興奮が両立した名作ですね。」
-        </div>
-        <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_738312/?affi_id=wariosan-009" class="btn link-btn">FANZAで中身をチェックする</a>
-    </div>
-</div>
 
     <div class="post">
-    <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_746219/d_746219jp-001.jpg" alt="寝取り男をメスにする">
-    <div class="post-body">
-        <h2 style="font-size: 1.1rem; color: #fff;">寝取り男をメスにする</h2>
-        <div class="comment">
-            「因果応報というか、寝取り男が女体化して『わからせ』られる展開が爽快かつエロすぎます 。最初は強気だったキャラが、メスとして開発されていく過程の描き込みがすごい。フルカラーなので視覚的なインパクトも抜群です。TSFやメス堕ちジャンルが好きなら、今週これは外せませんね。」
+        <div class="ichioshi-badge">今週の管理人イチオシ</div>
+        <img src="https://doujin-assets.dmm.co.jp/digital/cg/d_738312/d_738312pr.jpg" alt="子産み島2&3">
+        <div class="post-body">
+            <h2 style="font-size: 1.1rem; color: #fff;">子産み島2&3〜今、お腹あいてるよ〜</h2>
+            <div class="comment">
+                「青水庵さんらしい、圧倒的な多幸感とあまあまなハーレム設定が最高です。シリーズ続編ですが、今作からでも十分楽しめる親切設計。全編通して『オールハッピー』で読後感が本当に素晴らしい。3月のランキング上位も納得の、癒やしと興奮が両立した名作ですね。」
+            </div>
+            <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_738312/?affi_id=wariosan-009" class="link-btn">FANZAで中身をチェックする</a>
         </div>
-        <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_746219/?affi_id=wariosan-009" class="btn link-btn">FANZAで中身をチェックする</a>
     </div>
-</div>
 
     <div class="post">
-    <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_738506/d_738506jp-001.jpg" alt="姉弟でシたらいけません">
-    <div class="post-body">
-        <h2 style="font-size: 1.1rem; color: #fff;">姉弟でシたらいけません</h2>
-        <div class="comment">
-            「禁断の姉弟ものですが、ドロドロ感は一切なし 。とにかくお姉ちゃんが可愛くて、終始ニヤニヤが止まらない純愛あまあまストーリーです。焦らしからの爆発力がすごくて、最後はしっかりハッピーエンドなのが最高。画力も安定していて、近親ものが好きな人なら絶対に後悔しない一冊ですよ。」
+        <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_746219/d_746219jp-001.jpg" alt="寝取り男をメスにする">
+        <div class="post-body">
+            <h2 style="font-size: 1.1rem; color: #fff;">寝取り男をメスにする</h2>
+            <div class="comment">
+                「寝取り男が女体化して『わからせ』られる展開が爽快かつエロすぎます。最初は強気だったキャラが、メスとして開発されていく過程の描き込みがすごい。フルカラーなので視覚的なインパクトも抜群。TSFやメス堕ち好きなら今週これは外せません。」
+            </div>
+            <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_746219/?affi_id=wariosan-009" class="link-btn">FANZAで中身をチェックする</a>
         </div>
-        <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_738506/?affi_id=wariosan-009" class="btn link-btn">FANZAで中身をチェックする</a>
     </div>
-</div>
 
     <div class="post">
-    <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_742498/d_742498jp-001.jpg" alt="疲労れたときにはオナホがいいね">
-    <div class="post-body">
-        <h2 style="font-size: 1.1rem; color: #fff;">疲労れたときにはオナホがいいね</h2>
-        <div class="comment">
-            「仕事でクタクタな時に読むと、この『常識改変』の世界観がめちゃくちゃ染みます（笑 ）。長身ギャルとの距離感がとにかく近くて、電車内での密着シチュエーションは臨場感たっぷり。にむの屋さんの描くギャルの表情が絶妙にエロくて、非日常感にどっぷり浸かりたい時に超オススメです。」
+        <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_738506/d_738506jp-001.jpg" alt="姉弟でシたらいけません">
+        <div class="post-body">
+            <h2 style="font-size: 1.1rem; color: #fff;">姉弟でシたらいけません</h2>
+            <div class="comment">
+                「ドロドロ感なしの純愛あまあまストーリー。お姉ちゃんが可愛くて終始ニヤニヤが止まりません。焦らしからの爆発力がすごくて、最後はしっかりハッピーエンドなのが最高。画力も安定しており、近親ものが好きなら絶対に後悔しない一冊。」
+            </div>
+            <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_738506/?affi_id=wariosan-009" class="link-btn">FANZAで中身をチェックする</a>
         </div>
-        <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_742498/?affi_id=wariosan-009" class="btn link-btn">FANZAで中身をチェックする</a>
     </div>
-</div>
 
     <div class="post">
-    <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_739284/d_739284jp-001.jpg" alt="それゆけ、エロバカお嬢様！ 〜セレブの私がデカチン庶民を手籠めにするのは当然です！〜">
-    <div class="post-body">
-        <h2 style="font-size: 1.1rem; color: #fff;">それゆけ、エロバカお嬢様！ 〜セレブの私がデカチン庶民を手籠めにするのは当然です！〜</h2>
-        <div class="comment">
-            「高飛車なお嬢様が、庶民の主人公にメロメロになっていく王道のラブコメ展開が最高です 。お嬢様の『わからせ』要素もありつつ、最後はあまあまな純愛に着地するのがたまりません。作画も非常に綺麗で、お嬢様の表情の変化がとにかく可愛らしい一冊です。今週、間違いなく一番の注目作ですね。」
+        <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_742498/d_742498jp-001.jpg" alt="疲れたときにはオナホがいいね">
+        <div class="post-body">
+            <h2 style="font-size: 1.1rem; color: #fff;">疲れたときにはオナホがいいね</h2>
+            <div class="comment">
+                「仕事でクタクタな時に読むと、この『常識改変』の世界観が染みます。長身ギャルとの距離感がとにかく近くて、電車内での密着シチュエーションは臨場感たっぷり。にむの屋さんの描くギャルの表情が絶妙で、非日常感に浸りたい時に超オススメ。」
+            </div>
+            <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_742498/?affi_id=wariosan-009" class="link-btn">FANZAで中身をチェックする</a>
         </div>
-        <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_739284/?affi_id=wariosan-009" class="btn link-btn">FANZAで中身をチェックする</a>
     </div>
-</div>
 
-    
+    <div class="post">
+        <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_739284/d_739284jp-001.jpg" alt="エロバカお嬢様">
+        <div class="post-body">
+            <h2 style="font-size: 1.1rem; color: #fff;">それゆけ、エロバカお嬢様！</h2>
+            <div class="comment">
+                「高飛車なお嬢様が庶民の主人公にメロメロになっていく王道ラブコメ。わからせ要素もありつつ、最後はあまあまな純愛に着地するのがたまりません。作画も綺麗でお嬢様の表情変化がとにかく可愛い。今週の注目作。」
+            </div>
+            <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_739284/?affi_id=wariosan-009" class="link-btn">FANZAで中身をチェックする</a>
+        </div>
+    </div>
+
     <div class="post">
         <img src="https://ebook-assets.dmm.co.jp/digital/e-book/b104atint02542/b104atint02542pl.webp" alt="N県T市R村の風習について">
         <div class="post-body">
-            <h2 style="font-size: 1.1rem; color: #fff;">【N県T市R村の風習について【1話試し読み付き】】</h2>
+            <h2 style="font-size: 1.1rem; color: #fff;">N県T市R村の風習について</h2>
             <div class="comment">
-                「これマジで眼福。可愛い男の子が次から次へと出てくるんだけど、長編の中で毎回違うキャラの『初めての初々しいリアクション』が拝めて破壊力エグい。正直全部当たりなんだけど、個人的に『親子の回』はシチュエーションの作り込みと背徳感がヤバかった。完全に性癖ドストライク。試し読みだけでも絶対してみてほしい。」
+                「可愛い男の子たちの『初めて』が拝める破壊力エグい一作。特に親子の回はシチュエーションの作り込みと背徳感がヤバい。完全に性癖ドストライクでした。試し読みだけでも絶対してみてほしい。」
             </div>
-            <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fbook.dmm.co.jp%2Fproduct%2F6258579%2Fb104atint02542%2F&af_id=wariosan-009&ch=toolbar&ch_id=link" class="btn link-btn">FANZAで試し読み＆中身をチェックする</a>
+            <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fbook.dmm.co.jp%2Fproduct%2F6258579%2Fb104atint02542%2F&af_id=wariosan-009&ch=toolbar&ch_id=link" class="link-btn">FANZAで試し読み＆中身をチェック</a>
         </div>
     </div>
 
-    <p class="footer-text">© 2026 俺の秘蔵フォルダ. 無断転載禁止。</p>
+    <div class="footer-text">
+        <p>当サイトは18歳以上の成人を対象とした作品を紹介しています。18歳未満の方は閲覧できません。</p>
+        <p>© 2026 俺の殿堂入りリスト. 無断転載禁止。</p>
+    </div>
 </div>
 
 </body>
