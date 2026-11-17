@@ -1,163 +1,142 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>俺の殿堂入り同人リスト</title>
-    <style>
-        /* ベースデザイン */
-        body { background: #0f0f0f; color: #ccc; font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; margin: 0; padding: 15px; line-height: 1.6; }
-        .wrapper { max-width: 600px; margin: auto; }
-        
-        /* ヘッダー */
-        header { border-bottom: 2px solid #333; margin-bottom: 30px; padding: 20px 0; text-align: center; }
-        h1 { font-size: 1.4rem; color: #fff; margin: 10px 0; }
-        .age-warning { color: #ff4757; font-size: 0.75rem; font-weight: bold; margin-bottom: 10px; border: 1px solid #ff4757; padding: 5px; border-radius: 4px; }
-        .ad-notice { font-size: 0.7rem; color: #666; margin-top: 10px; }
-        
-        /* セクション見出し */
-        .section-title { font-size: 1.1rem; color: #fff; border-left: 4px solid #ff4757; padding-left: 10px; margin: 40px 0 20px; font-weight: bold; }
-
-        /* コンテンツカード */
-        .post { background: #1a1a1a; margin-bottom: 40px; border-radius: 8px; overflow: hidden; position: relative; border: 1px solid #333; }
-        .post img { width: 100%; display: block; border-bottom: 1px solid #333; }
-        .post-body { padding: 18px; }
-        .post h2 { font-size: 1.1rem; color: #fff; margin: 0 0 12px; line-height: 1.4; }
-        
-        /* ラベル・バッジ */
-        .badge { position: absolute; top: 12px; left: 12px; color: #fff; padding: 4px 12px; font-weight: bold; font-size: 0.75rem; border-radius: 20px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.6); }
-        .badge-ichioshi { background: #ff4757; }
-        .badge-deep { background: #9c27b0; }
-
-        /* レビューコメント */
-        .comment { background: #222; border-left: 4px solid #444; padding: 12px; margin: 15px 0; font-size: 0.9rem; color: #eee; }
-        .comment-standard { border-color: #ff4757; }
-        .comment-deep { border-color: #9c27b0; }
-
-        /* ボタン */
-        .link-btn { display: block; text-decoration: none; text-align: center; padding: 14px; border-radius: 6px; font-weight: bold; margin-top: 15px; transition: 0.2s; font-size: 0.95rem; }
-        .btn-fanza { background: #e74c3c; color: #fff; }
-        .btn-fanza:hover { background: #ff5e4d; }
-        .btn-dlsite { background: #f39c12; color: #fff; }
-        .btn-dlsite:hover { background: #ffae2b; }
-        .btn-deep { background: #9c27b0; color: #fff; }
-        .btn-deep:hover { background: #b13ed6; }
-
-        /* 裏モード（Collectors Edition）への入り口 */
-        .ura-gate { background: #111; border: 1px dashed #444; padding: 30px 20px; text-align: center; margin: 60px 0; border-radius: 10px; }
-        .ura-gate h3 { color: #fff; font-size: 1rem; margin-bottom: 10px; }
-        .ura-gate p { font-size: 0.8rem; color: #777; margin-bottom: 20px; }
-        .open-btn { background: #333; color: #aaa; border: 1px solid #444; padding: 10px 30px; border-radius: 30px; cursor: pointer; font-size: 0.85rem; transition: 0.3s; }
-        .open-btn:hover { background: #444; color: #fff; }
-
-        /* フッター */
-        .footer-text { text-align: center; font-size: 0.75rem; color: #555; margin-top: 60px; padding: 30px 0; border-top: 1px solid #333; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>俺の殿堂入り同人リスト | ポンポン</title>
+<meta name="description" content="広告一切なし。自分が本当に「これは殿堂入りだ」と思った同人作品だけを厳選した秘密のフォルダ。シチュエーションの作り込みや初々しい反応など、実用性と破壊力が高かったものだけ。">
+<meta property="og:title" content="俺の殿堂入り同人リスト">
+<meta property="og:description" content="広告一切なし、ガチで気に入った同人だけ。週末の殿堂入りリスト、随時更新中。">
+<style>
+body{font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;margin:0;background:#111;color:#eee;line-height:1.7}
+a{color:#ff8fb3}.wrap{max-width:860px;margin:0 auto;padding:20px}
+header{border-bottom:1px solid #333;padding-bottom:16px}
+h1{font-size:26px;line-height:1.3;margin:8px 0}
+.badge{display:inline-block;background:#ff2e63;color:#fff;font-size:12px;padding:2px 8px;border-radius:999px}
+.notice{font-size:12px;color:#aaa}
+.tag{display:inline-block;border:1px solid #555;border-radius:999px;padding:4px 10px;margin:4px 4px 4px 0;font-size:13px;cursor:pointer;background:#1c1c1c;color:#eee}
+.tag.active{background:#ff2e63;border-color:#ff2e63}
+.card{background:#1c1c1c;border:1px solid #333;border-radius:12px;padding:16px;margin:16px 0}
+.card img{max-width:100%;border-radius:8px;display:block}
+.card h3{margin:10px 0 6px;font-size:18px}
+.meta{font-size:13px;color:#bbb}
+.btn{display:inline-block;background:#ff2e63;color:#fff!important;text-decoration:none;padding:10px 16px;border-radius:999px;font-weight:700;margin-top:10px}
+h2{border-left:4px solid #ff2e63;padding-left:10px;margin-top:36px}
+.candidate{opacity:.95;border-style:dashed}
+</style>
 </head>
 <body>
+<div class="wrap">
+<header>
+<span class="badge">随時更新</span>
+<h1>俺の殿堂入り同人リスト</h1>
+<p>広告一切なし。自分が本当に「これは殿堂入りだ」と思った同人作品だけを放り込んでいる秘密のフォルダです。シチュエーションの作り込みや、初々しい反応など、とにかく実用性と破壊力が高かったものだけを厳選。</p>
+<p class="notice">18歳未満の方はご利用できません。このページにはアフィリエイトリンク（広告）が含まれます。価格・配信状況は購入前にFANZA公式ページでご確認ください。最終更新: 2026-11-17</p>
+</header>
 
-<div class="wrapper">
-    <header>
-        <div class="age-warning">【18禁】当サイトは18歳未満の方の閲覧を固く禁じます。</div>
-        <h1>俺の殿堂入り同人リスト</h1>
-        <p style="font-size: 0.85rem; color: #888; margin: 0;">自腹で買って、心底「ヤバイ」と思った神作だけ。忖度なし。</p>
-        <div class="ad-notice">※本ページはプロモーションを含みます。</div>
-    </header>
-
-    <div class="section-title">Standard Selection（王道・名作）</div>
-
-    <div class="post">
-        <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_207874/d_207874jp-010.jpg" alt="作品画像">
-        <div class="post-body">
-            <h2>陰キャ美少女は、担任に犯●れてもイキまくる3</h2>
-            <div class="comment comment-standard">
-                「マジ、この作品ヤバイよ。陰キャ美少女ってキャラ設定大好きなんだけど、担任に犯されまくってもイキる姿がクセになるのよね…だんだんと気持ち良くなっちゃう描写とかもたまらないし、完全に俺の好きな要素詰め込まれてる感じだ。マジでおすすめ。」
-            </div>
-            <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_207874/?affi_id=wariosan-011" class="link-btn btn-fanza" target="_blank">FANZAで詳細を見る</a>
-        </div>
-    </div>
-
-    <div class="post">
-        <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_239773/d_239773pr.jpg" alt="作品画像">
-        <div class="post-body">
-            <h2>巨乳の友達と付き合うまでの話 前編</h2>
-            <div class="comment comment-standard">
-                「数年ぶりに再会した巨乳の幼馴染・美月。図書室での勉強会とか、シチュエーションが王道すぎて逆に刺さるわ。制服の隙間から覗く圧倒的な肉感の描写がマジで最高。フグタ家先生の描く柔らかそうな質感は唯一無二だわ。」
-            </div>
-            <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_239773/?affi_id=wariosan-011" class="link-btn btn-fanza" target="_blank">FANZAで中身をチェック</a>
-        </div>
-    </div>
-
-    <div class="post">
-        <div class="badge badge-ichioshi">今週のイチオシ</div>
-        <img src="https://doujin-assets.dmm.co.jp/digital/cg/d_738312/d_738312pr.jpg" alt="作品画像">
-        <div class="post-body">
-            <h2>子産み島2&3〜今、お腹あいてるよ〜</h2>
-            <div class="comment comment-standard">
-                「青水庵さんらしい、圧倒的な多幸感とあまあまなハーレム設定が最高です。シリーズ続編ですが、今作からでも十分楽しめる親切設計。全編通して『オールハッピー』で読後感が本当に素晴らしい名作ですね。」
-            </div>
-            <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_738312/?affi_id=wariosan-011" class="link-btn btn-fanza" target="_blank">FANZAで詳細を見る</a>
-        </div>
-    </div>
-
-    <div class="post">
-        <img src="https://ebook-assets.dmm.co.jp/digital/e-book/b104atint02542/b104atint02542pl.webp" alt="作品画像">
-        <div class="post-body">
-            <h2>N県T市R村の風習について</h2>
-            <div class="comment comment-standard">
-                「可愛い男の子たちの『初めて』が拝める破壊力エグい一作。特に親子の回はシチュエーションの作り込みと背徳感がヤバい。完全に性癖ドストライクでした。試し読みだけでも絶対してみてほしい。」
-            </div>
-            <a href="https://book.dmm.co.jp/product/6258579/b104atint02542/?affi_id=wariosan-011" class="link-btn btn-dlsite" target="_blank">DLsiteで試し読みする</a>
-        </div>
-    </div>
-
-    <div class="ura-gate" id="ura-gate">
-        <h3>Collectors Edition</h3>
-        <p>ここから先は、より深く、マニアックな<br>僕の「本当の性癖」を反映したリストです。</p>
-        <button class="open-btn" onclick="openDeepList()">リストを展開する</button>
-    </div>
-
-    <div id="deep-list" style="display: none;">
-        <div class="section-title" style="border-color: #9c27b0;">Collectors Edition（深淵）</div>
-
-        <div class="post">
-            <div class="badge badge-deep">Deep Selection</div>
-            <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_746219/d_746219jp-001.jpg" alt="作品画像">
-            <div class="post-body">
-                <h2>寝取り男をメスにする</h2>
-                <div class="comment comment-deep">
-                    「寝取り男が女体化して『わからせ』られる展開が爽快かつエロすぎます。最初は強気だったキャラが、メスとして開発されていく過程の描き込みがすごい。TSFやメス堕ち好きなら今週これは外せません。」
-                </div>
-                <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_746219/?affi_id=wariosan-011" class="link-btn btn-deep" target="_blank">FANZAで中身をチェック</a>
-            </div>
-        </div>
-
-        <div class="post">
-            <img src="https://doujin-assets.dmm.co.jp/digital/comic/d_743392/d_743392pr.jpg" alt="作品画像">
-            <div class="post-body">
-                <h2>オタクの僕が一軍ギャルと付き合えるまでの話3</h2>
-                <div class="comment comment-deep">
-                    「あかりの執着がもうホラーレベル。耳元で囁かれる『好き』の重みが前巻とは段違い。これは救いじゃなくて『監禁』だろ！最高の毒薬すぎる。」
-                </div>
-                <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_743392/?affi_id=wariosan-011" class="link-btn btn-deep" target="_blank">DLsiteでサンプルを聴く</a>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer-text">
-        <p>当サイトは18歳以上の成人を対象とした作品を紹介しています。<br>18歳未満の方は直ちに閲覧を中止してください。</p>
-        <p>© 2026 俺の殿堂入りリスト. All Rights Reserved.</p>
-    </footer>
+<h2>シチュエーション別に探す</h2>
+<div id="tags">
+<button class="tag active" data-tag="all">すべて</button>
+<button class="tag" data-tag="人妻・不倫">人妻・不倫</button>
+<button class="tag" data-tag="陰キャ・担任">陰キャ・担任</button>
+<button class="tag" data-tag="幼なじみ・巨乳">幼なじみ・巨乳</button>
+<button class="tag" data-tag="ハーレム・あまあま">ハーレム・あまあま</button>
+<button class="tag" data-tag="背徳・初体験">背徳・初体験</button>
+<button class="tag" data-tag="TSF・メス堕ち">TSF・メス堕ち</button>
+<button class="tag" data-tag="ヤンデレ・執着">ヤンデレ・執着</button>
 </div>
 
-<script>
-    function openDeepList() {
-        document.getElementById('deep-list').style.display = 'block';
-        document.getElementById('ura-gate').style.display = 'none';
-        // 展開時に少しスクロール
-        window.scrollBy({ top: 150, behavior: 'smooth' });
-    }
-</script>
+<h2>今週のイチオシ</h2>
 
+<div class="card" data-tags="ハーレム・あまあま">
+<img src="https://doujin-assets.dmm.co.jp/digital/cg/d_738312/d_738312pr.jpg" alt="子産み島2&3">
+<h3>子産み島2&amp;3〜今、お腹あいてるよ〜</h3>
+<p class="meta">青水庵 / CG集 / ハーレム・あまあま</p>
+<p>「青水庵さんらしい、圧倒的な多幸感とあまあまなハーレム設定が最高です。シリーズ続編ですが、今作からでも十分楽しめる親切設計。全編通して『オールハッピー』で読後感が本当に素晴らしい名作ですね。」</p>
+<a class="btn" href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_738312/?affi_id=wariosan-011" target="_blank" rel="nofollow sponsored noopener">FANZAで詳細を見る</a>
+</div>
+
+<div class="card" data-tags="背徳・初体験">
+<img src="https://ebook-assets.dmm.co.jp/digital/e-book/b104atint02542/b104atint02542pl.webp" alt="N県T市R村の風習について">
+<h3>N県T市R村の風習について</h3>
+<p class="meta">背徳・初体験 / シチュエーション作り込み</p>
+<p>「可愛い男の子たちの『初めて』が拝める破壊力エグい一作。特に親子の回はシチュエーションの作り込みと背徳感がヤバい。完全に性癖ドストライクでした。試し読みだけでも絶対してみてほしい。」</p>
+<a class="btn" href="https://book.dmm.co.jp/product/6258579/b104atint02542/?affi_id=wariosan-011" target="_blank" rel="nofollow sponsored noopener">FANZAブックスで試し読みする</a>
+</div>
+
+<h2>Standard Selection（王道・名作）</h2>
+
+<div class="card" data-tags="陰キャ・担任">
+<img src="https://doujin-assets.dmm.co.jp/digital/comic/d_207874/d_207874jp-010.jpg" alt="陰キャ美少女は、担任に犯●れてもイキまくる3">
+<h3>陰キャ美少女は、担任に犯●れてもイキまくる3</h3>
+<p class="meta">陰キャ・担任</p>
+<p>「マジ、この作品ヤバイよ。陰キャ美少女ってキャラ設定大好きなんだけど、担任に犯されまくってもイキる姿がクセになるのよね…だんだんと気持ち良くなっちゃう描写とかもたまらないし、完全に俺の好きな要素詰め込まれてる感じだ。マジでおすすめ。」</p>
+<a class="btn" href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_207874/?affi_id=wariosan-011" target="_blank" rel="nofollow sponsored noopener">FANZAで詳細を見る</a>
+</div>
+
+<div class="card" data-tags="幼なじみ・巨乳">
+<img src="https://doujin-assets.dmm.co.jp/digital/comic/d_239773/d_239773pr.jpg" alt="巨乳の友達と付き合うまでの話 前編">
+<h3>巨乳の友達と付き合うまでの話 前編</h3>
+<p class="meta">フグタ家 / 幼なじみ・巨乳</p>
+<p>「数年ぶりに再会した巨乳の幼馴染・美月。図書室での勉強会とか、シチュエーションが王道すぎて逆に刺さるわ。制服の隙間から覗く圧倒的な肉感の描写がマジで最高。フグタ家先生の描く柔らかそうな質感は唯一無二だわ。」</p>
+<a class="btn" href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_239773/?affi_id=wariosan-011" target="_blank" rel="nofollow sponsored noopener">FANZAで中身をチェック</a>
+</div>
+
+<h2>Collectors Edition（深淵）</h2>
+<p>ここから先は、より深く、マニアックな僕の「本当の性癖」を反映したリストです。</p>
+
+<div class="card" data-tags="TSF・メス堕ち">
+<img src="https://doujin-assets.dmm.co.jp/digital/comic/d_746219/d_746219jp-001.jpg" alt="寝取り男をメスにする">
+<h3>寝取り男をメスにする</h3>
+<p class="meta">TSF・メス堕ち / Deep Selection</p>
+<p>「寝取り男が女体化して『わからせ』られる展開が爽快かつエロすぎます。最初は強気だったキャラが、メスとして開発されていく過程の描き込みがすごい。TSFやメス堕ち好きなら今週これは外せません。」</p>
+<a class="btn" href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_746219/?affi_id=wariosan-011" target="_blank" rel="nofollow sponsored noopener">FANZAで中身をチェック</a>
+</div>
+
+<div class="card" data-tags="ヤンデレ・執着">
+<img src="https://doujin-assets.dmm.co.jp/digital/comic/d_743392/d_743392pr.jpg" alt="オタクの僕が一軍ギャルと付き合えるまでの話3">
+<h3>オタクの僕が一軍ギャルと付き合えるまでの話3</h3>
+<p class="meta">ヤンデレ・執着</p>
+<p>「あかりの執着がもうホラーレベル。耳元で囁かれる『好き』の重みが前巻とは段違い。これは救いじゃなくて『監禁』だろ！最高の毒薬すぎる。」</p>
+<a class="btn" href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_743392/?affi_id=wariosan-011" target="_blank" rel="nofollow sponsored noopener">FANZAで中身をチェック</a>
+</div>
+
+<h2>11月の売れ筋から pick up（候補・要確認）</h2>
+<p class="notice">ここはまだ追加候補です。鈴木さんが「殿堂入り」と認めたものだけを正式追加します。商品リンクはFANZA公式で確認してから追加します。</p>
+
+<div class="card candidate" data-tags="人妻・不倫">
+<h3>候補: 人妻×バニーのコスプレ / いろどり牛乳4.5％</h3>
+<p class="meta">2026年11月 人気作 / レビュー24件・平均4.92（2026-11-05時点の紹介記事より）</p>
+<p>人妻×バニーという分かりやすい強さ。鈴木さんの「バ先のパート主婦（41）」の流れと相性がいい。</p>
+</div>
+
+<div class="card candidate" data-tags="ハーレム・あまあま">
+<h3>候補: 完全同意型性風俗SS株式会社《ぐらんデトックス！》 / 月面掘削調査団</h3>
+<p class="meta">2026年11月 月間1位 / レビュー52件・★5.00（2026-11-14時点）</p>
+<p>今月いちばん売れている同人。迷ったらこれ、という位置づけで「今月の1位」枠として使える。</p>
+</div>
+
+<div class="card candidate" data-tags="幼なじみ・巨乳">
+<h3>候補: 100日後に妊娠するOLさん！2 / 平仮名で、べろきす</h3>
+<p class="meta">2026年11月 人気コミック上位</p>
+<p>OL×妊娠というテーマで、シリーズ2作目。評価と継続性が高い。</p>
+</div>
+
+<footer>
+<p class="notice">運営: ポンポン @doga0917 / Xのプロフィールからいつでも戻れます。好きなシチュエーションがあったらXで共有してください。<br>当サイトは18歳以上の成人を対象とした作品を紹介しています。18歳未満の方は直ちに閲覧を中止してください。<br>© 2026 俺の殿堂入りリスト. All Rights Reserved.</p>
+</footer>
+</div>
+<script>
+document.querySelectorAll('.tag').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.tag').forEach(function(b){b.classList.remove('active')});
+    btn.classList.add('active');
+    var tag = btn.dataset.tag;
+    document.querySelectorAll('.card').forEach(function(card){
+      if(tag==='all' || (card.dataset.tags||'').indexOf(tag) !== -1){ card.style.display=''; } else { card.style.display='none'; }
+    });
+  });
+});
+</script>
 </body>
 </html>
